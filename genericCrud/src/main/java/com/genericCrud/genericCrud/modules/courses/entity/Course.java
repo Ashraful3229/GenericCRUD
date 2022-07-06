@@ -21,6 +21,7 @@ public class Course extends BaseEntity {
 
     private String name;
     private String code;
+    private Boolean flag=true;
 
     @OneToMany(mappedBy = "course")
     Set<CourseRegistration> registrations;

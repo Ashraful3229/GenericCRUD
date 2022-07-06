@@ -31,7 +31,7 @@ public class ServiceGenericImpl<T extends BaseEntity> implements ServiceGeneric<
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(Long id) throws CustomException {
         genericRepository.deleteById(id);
     }
 
