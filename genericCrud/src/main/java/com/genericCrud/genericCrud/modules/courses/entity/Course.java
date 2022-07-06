@@ -1,15 +1,14 @@
-package com.genericCrud.genericCrud.modules.students.entity;
+package com.genericCrud.genericCrud.modules.courses.entity;
 
 import com.genericCrud.genericCrud.modules.courseRegistration.entity.CourseRegistration;
-import com.genericCrud.genericCrud.modules.courses.entity.Course;
 import com.genericCrud.genericCrud.modules.generic.baseEntity.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.springframework.data.repository.cdi.Eager;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,13 +17,11 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-public class Student extends BaseEntity {
+public class Course extends BaseEntity {
 
-    private String firstName;
-    private String lastName;
-    private LocalDate dob;
+    private String name;
+    private String code;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "course")
     Set<CourseRegistration> registrations;
-
 }
